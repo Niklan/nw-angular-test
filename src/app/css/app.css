@@ -1,0 +1,66 @@
+@-webkit-keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-50%); }
+  to {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/* line 1, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+* {
+  margin: 0;
+  padding: 0; }
+
+/* line 6, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+html {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* line 14, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+body {
+  font: 14px/1.5 Arial, Helvetica, sans-serif;
+  color: black;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, #14243d 0%, #030611 100%); }
+
+/* line 22, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+a, a:visited, a:hover {
+  color: #fff;
+  text-decoration: none; }
+
+/* line 27, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+#titlebar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.45) 0%, rgba(254, 254, 254, 0) 100%);
+  padding: 7px;
+  -webkit-app-region: drag;
+  -webkit-user-select: none; }
+  /* line 36, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+  #titlebar .title {
+    flex: 5;
+    color: white;
+    text-shadow: 0px 1px 0px #3b3b3b;
+    font-weight: bold; }
+  /* line 42, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+  #titlebar .buttons {
+    flex: 1;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    /* line 48, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+    #titlebar .buttons li {
+      display: inline-block; }
+      /* line 50, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+      #titlebar .buttons li a {
+        -webkit-app-region: no-drag;
+        display: block;
+        width: 20px;
+        height: 20px; }

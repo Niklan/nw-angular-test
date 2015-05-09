@@ -1,0 +1,48 @@
+{
+  "app_name": "NW.js testing",
+  "name": "nw-test",
+  "main": "app://app/src/app/index.html",
+  "author": "Niklan",
+  "license": "GNU GPL v2",
+  "nodejs": true,
+  "keywords": [],
+  "user-agent": "",
+  "window": {
+    "fullscreen": false,
+    "resizable": true,
+    "show": true,
+    "always-on-top": false,
+    "frame": false,
+    "title": "NW.js testing",
+    "kiosk": false,
+    "kiosk_emulation": false,
+    "exe_icon": "",
+    "visible": true,
+    "as_desktop": false,
+    "toolbar": false,
+    "mac_icon": "",
+    "position": "center",
+    "show_in_taskbar": true,
+    "height": 600,
+    "width": 800,
+    "transparent": false,
+    "icon": ""
+  },
+  "version": "1.0.0",
+  "inject-js-start": "",
+  "chromium-args": "",
+  "description": "",
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "webkit": {
+    "page-cache": false,
+    "java": false,
+    "plugin": true
+  },
+  "js-flags": "",
+  "single-instance": true,
+  "snapshot": "",
+  "node-main": ""
+}
