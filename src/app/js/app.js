@@ -1,5 +1,9 @@
 'use strict';
 
 var os = require('os');
-var nw = require('nw.gui');
-var win = nw.Window.get();
+var gui = require('nw.gui');
+var win = gui.Window.get();
+var app = angular.module('app', ['ngRoute']);
+
+app.config(router);
+

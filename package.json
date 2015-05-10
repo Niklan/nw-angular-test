@@ -19,7 +19,7 @@
     "exe_icon": "",
     "visible": true,
     "as_desktop": false,
-    "toolbar": false,
+    "toolbar": true,
     "mac_icon": "",
     "position": "center",
     "show_in_taskbar": true,

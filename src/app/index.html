@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,11 +7,27 @@
   <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="./css/app.css">
 </head>
-<body>
+<body ng-controller="mainController">
+  <!-- View -->
+  <ng-view></ng-view>
 
   <!-- Core -->
   <script src="./vendor/angular.js"></script>
-  <script src="./js/app.js"></script>
+  <script src="./vendor/angular-route.js"></script>
   <script src="./js/controls.js"></script>
+  <script src="./js/router.js"></script>
+
+  <!-- When all dependencies loaded we load out app -->
+  <script src="./js/app.js"></script>
+
+  <!-- Controllers -->
+  <script src="./js/controllers/mainController.js"></script>
+  <script src="./js/controllers/testController.js"></script>
+
+  <!-- Directives -->
+  <script src="./js/directives/testDirective.js"></script>
+
+  <!-- Templates for caching -->
+  <script type="text/ng-template" id="./templates/test.html"></script>
 </body>
 </html>
