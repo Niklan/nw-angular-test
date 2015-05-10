@@ -22,45 +22,68 @@ html {
 /* line 14, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
 body {
   font: 14px/1.5 Arial, Helvetica, sans-serif;
-  color: white;
+  color: #3b3b3b;
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(ellipse at center, #14243d 0%, #030611 100%); }
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-sizing: border-box;
+  -webkit-user-select: none; }
 
-/* line 22, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+/* line 24, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
 a, a:visited, a:hover {
-  color: #fff;
+  color: blue;
   text-decoration: none; }
 
-/* line 27, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+/* line 29, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
 #titlebar {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: stretch;
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.45) 0%, rgba(254, 254, 254, 0) 100%);
+  background: #FCFCFC;
   padding: 7px;
   -webkit-app-region: drag;
   -webkit-user-select: none; }
-  /* line 36, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+  /* line 38, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
   #titlebar .title {
     flex: 5;
-    color: white;
-    text-shadow: 0px 1px 0px #3b3b3b;
+    color: #3b3b3b;
     font-weight: bold; }
-  /* line 42, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+  /* line 43, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
   #titlebar .buttons {
     flex: 1;
-    text-align: right;
-    margin: 0;
-    padding: 0;
-    list-style: none; }
-    /* line 48, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
-    #titlebar .buttons li {
-      display: inline-block; }
-      /* line 50, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
-      #titlebar .buttons li a {
-        -webkit-app-region: no-drag;
-        display: block;
-        width: 20px;
-        height: 20px; }
+    text-align: right; }
+    /* line 46, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+    #titlebar .buttons a {
+      -webkit-app-region: no-drag;
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      cursor: pointer; }
+
+/* line 57, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+#windowControlMinimize {
+  opacity: 0;
+  background: #87D37C;
+  -webkit-animation: fade-down 1s linear forwards; }
+
+/* line 62, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+#windowControlMaximize {
+  opacity: 0;
+  background: #F4B350;
+  -webkit-animation: fade-down 1s linear 200ms forwards; }
+
+/* line 67, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+#windowControlClose {
+  opacity: 0;
+  background: #EF4836;
+  -webkit-animation: fade-down 1s linear 400ms forwards; }
+
+/* line 73, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+#welcome {
+  text-align: center; }
+  /* line 76, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+  #welcome > img {
+    display: table;
+    margin: 0 auto; }

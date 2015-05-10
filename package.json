@@ -1,6 +1,6 @@
 {
-  "app_name": "NW.js testing",
-  "name": "nw-test",
+  "app_name": "HearthStone",
+  "name": "hearthstone",
   "main": "app://app/src/app/index.html",
   "author": "Niklan",
   "license": "GNU GPL v2",
@@ -13,7 +13,7 @@
     "show": true,
     "always-on-top": false,
     "frame": false,
-    "title": "NW.js testing",
+    "title": "HearthStone",
     "kiosk": false,
     "kiosk_emulation": false,
     "exe_icon": "",
@@ -25,6 +25,8 @@
     "show_in_taskbar": true,
     "height": 600,
     "width": 800,
+    "min_height": 600,
+    "min_width": 800,
     "transparent": false,
     "icon": ""
   },
