@@ -17,6 +17,8 @@ body {
   width: 100vw;
   height: 100vh;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  background: url('app://app/src/app/images/welcome-bg.jpg') center center;
+  background-size: cover;
   -webkit-box-sizing: border-box;
   -webkit-user-select: none;
 }
@@ -72,10 +74,19 @@ a, a:visited, a:hover {
 
 #welcome {
   text-align: center;
-
-  > img {
-    display: table;
-    margin: 0 auto;
+  .app-name {
+    color: white;
+    text-shadow: 1px 1px 0px rgba(black, 0.2);
+    font-size: 50px;
+    margin-top: 30%;
   }
-
+  .image-copyright {
+    color: rgba(white, .5);
+    font-weight: bold;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    cursor: default;
+    -webkit-user-select: none;
+  }
 }
