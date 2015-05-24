@@ -3,37 +3,57 @@
  */
 app.controller('signIn', function ($scope, $location) {
   $scope.oAuthSignIn = function () {
-    // Prepare connection URL.
-    var connectUrl = 'https://soundcloud.com/connect?'
-        + 'client_id=' + client_id
-        + '&redirect_uri=' + redirect_uri
-        + '&response_type=code_and_token&scope=non-expiring&display=popup';
+    if (!localStorage.accessToken) {
+      $location.path('/test');
+    }
+    else {
+      // Prepare connection URL.
+      var connectUrl = 'https://soundcloud.com/connect?'
+          + 'client_id=' + client_id
+          + '&redirect_uri=' + redirect_uri
+          + '&response_type=code_and_token&scope=non-expiring&display=popup';
 
-    // We create simple webserver to handle callback and get acces token.
-    var server = http.createServer(function(request, response) {
-      var query = url.parse(request.url, true).query;
-      access_token = query.code;
-      response.writeHead(200, {"Content-Type": "text/plain"});
-      response.end();
-      authWindow.close();
-      $scope.getTokenCallback();
-      server.close();
-    }).listen(3000, '127.0.0.1');
+      var getCodeCallback = function() {
+        // Close server.
+        server.close();
 
-    // Create auth pop-up window.
-    var authWindow = gui.Window.open(connectUrl, {
-      "title": "Auth",
-      "position": "center",
-      "focus": true,
-      "toolbar": false,
-      "frame": true
-    });
-  }
+        // Get access token.
+        request.post({
+          url:'https://api.soundcloud.com/oauth2/token',
+          form: {
+            'client_id': client_id,
+            'client_secret': client_secret,
+            'grant_type': 'authorization_code',
+            'redirect_uri': redirect_uri,
+            'code': localStorage.accessCode
+          }
+        }, function(err,httpResponse,body){
+          var result = JSON.parse(body);
+          // Save token.
+          localStorage.accessToken = result.access_token;
+          $location.path('/test');
+          $scope.$apply();
+        });
+      }
 
-  /**
-   * This callback calls after we get access token.
-   */
-  $scope.getTokenCallback = function() {
-    $location.path('/test');
+      // We create simple webserver to handle callback and get access code.
+      var server = http.createServer(function(request, response) {
+        var query = url.parse(request.url, true).query;
+        localStorage.accessCode = query.code;
+        response.writeHead(200, {"Content-Type": "text/plain"});
+        response.end();
+        authWindow.close();
+        getCodeCallback();
+      }).listen(3000, '127.0.0.1');
+
+      // Create auth pop-up window.
+      var authWindow = gui.Window.open(connectUrl, {
+        "title": "Auth",
+        "position": "center",
+        "focus": true,
+        "toolbar": true,
+        "frame": true
+      });
+    }
   }
 });
