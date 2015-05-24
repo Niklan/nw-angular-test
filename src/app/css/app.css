@@ -83,16 +83,16 @@ a, a:visited, a:hover {
   -webkit-animation: fade-down 1s linear 400ms forwards; }
 
 /* line 75, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
-#welcome {
+#signIn {
   text-align: center; }
   /* line 77, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
-  #welcome .app-name {
+  #signIn .app-name {
     color: white;
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
     font-size: 50px;
-    margin-top: 30%; }
+    margin-top: 20%; }
   /* line 83, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
-  #welcome .image-copyright {
+  #signIn .image-copyright {
     color: rgba(255, 255, 255, 0.5);
     font-weight: bold;
     position: absolute;
@@ -100,3 +100,9 @@ a, a:visited, a:hover {
     left: 5px;
     cursor: default;
     -webkit-user-select: none; }
+  /* line 92, /home/nikita/Projects/nodewebkit/src/app/scss/_style.scss */
+  #signIn .signin-btn {
+    background: url("app://app/src/app/images/btn-connect-sc-l.png") no-repeat;
+    width: 242px;
+    height: 29px;
+    border: none; }

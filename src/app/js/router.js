@@ -4,9 +4,9 @@
  */
 function router($routeProvider) {
   $routeProvider
-    .when('/', {
-      templateUrl: 'templates/welcome.html',
-      controller: 'main'
+    .when('/signin', {
+      templateUrl: 'templates/signin.html',
+      controller: 'signIn'
     })
     .when('/test', {
       templateUrl: 'templates/test.html',
